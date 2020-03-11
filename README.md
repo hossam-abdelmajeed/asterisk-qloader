@@ -15,32 +15,32 @@
 		- **LOOKUP** is the file will hold the starting point for every queue_log read (line number the script will start reading from).
 		- **QUEUE_LOG** is the full path to the queue_log file it has to parse.
 		- **DLMTR** is the pre-defined delimiter in queue_log file, which is by default a pipe "|", preferred not change that unless you know what you are doing.
-		- **NEEDED_EVENETS** is an array holds needed events that will be considered into parsing and inserted into database.
-			You can use any of the below:
-				```
-				+----------------+
-				| event          |
-				+----------------+
-				| QUEUESTART     |
-				| CONFIGRELOAD   |
-				| DID            |
-				| ENTERQUEUE     |
-				| ABANDON        |
-				| AGENTLOGIN     |
-				| UNPAUSEALL     |
-				| UNPAUSE        |
-				| SYSCOMPAT      |
-				| PAUSEALL       |
-				| PAUSE          |
-				| AGENTLOGOFF    |
-				| CONNECT        |
-				| COMPLETECALLER |
-				| COMPLETEAGENT  |
-				| ADDMEMBER      |
-				| REMOVEMEMBER   |
-				| HEARTBEAT      |
-				+----------------+
-				```
+		- **NEEDED_EVENETS** is an array holds needed events that will be considered into parsing and inserted into database
+		- you can use any of the below:
+		```	+----------------+
+			+----------------+
+			| event          |
+			+----------------+
+			| QUEUESTART     |
+			| CONFIGRELOAD   |
+			| DID            |
+			| ENTERQUEUE     |
+			| ABANDON        |
+			| AGENTLOGIN     |
+			| UNPAUSEALL     |
+			| UNPAUSE        |
+			| SYSCOMPAT      |
+			| PAUSEALL       |
+			| PAUSE          |
+			| AGENTLOGOFF    |
+			| CONNECT        |
+			| COMPLETECALLER |
+			| COMPLETEAGENT  |
+			| ADDMEMBER      |
+			| REMOVEMEMBER   |
+			| HEARTBEAT      |
+			+----------------+
+		```
 		- **SRV** the MySQL hostname to connect to.
 		- **USR** the MySQL username to use.
 		- **PWD** the MySQL password to use.
@@ -55,6 +55,6 @@
 		ALTER TABLE `queue_log` ADD PRIMARY KEY (`id`), ADD KEY `uniqueid` (`uniqueid`);
 		ALTER TABLE `queue_log` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 		```
-	- Starting qloader.php as a service.
+3. Starting qloader.php as a service.
 	
 That's it.
