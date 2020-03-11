@@ -1,5 +1,5 @@
 # asterisk-qloader
-	Loading the Asterisk queue_log file into MySQL database
+	Loading Asterisk queue_log file into MySQL database
 
 1. What is qloader?
 
